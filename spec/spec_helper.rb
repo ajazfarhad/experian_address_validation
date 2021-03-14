@@ -7,7 +7,7 @@ require "bundler/setup"
 
 require_relative "support/helpers/client_helper"
 
-Dotenv.load("env.test", "env.example")
+Dotenv.load(".env.test", ".env.example")
 
 VCR.configure do |c|
   c.hook_into :webmock
