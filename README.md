@@ -33,7 +33,10 @@ $ gem install experian_address_validation
 ## Experian Address Validation API Reference
 https://www.edq.com/documentation/apis-r/address-validate/experian-address-validation/#/AddressFormat/Get
 
-## Search Address
+# Endpoints
+---
+
+### Search Address
 ------
 
 ``` ruby
@@ -65,7 +68,7 @@ The call to above operation will return response in the following structure.
 Address Search endpoint:
 https://api.experianaperture.io/address/search/v1
 
-## Format Address
+### Format Address
 ------
 
 ``` ruby
