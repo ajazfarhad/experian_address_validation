@@ -9,15 +9,11 @@ Gem::Specification.new do |spec|
   spec.email         = ["ajaz.farhad19@gmail.com"]
 
   spec.summary       = "Ruby wrapper for Experian Address Validation API"
-  spec.description   = ""
-  spec.homepage      = "https://www.dummyuri.com"
+  spec.homepage      = "https://github.com/ajazfarhad/experian_address_validation"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.dummyuri.com"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
