@@ -13,7 +13,8 @@ Naming/VariableNumber:
   CheckSymbols: false
 
 Metrics/BlockLength:
-  IgnoredMethods: ['context', 'describe', 'shared_examples_for']
+  Enabled: false
+  # IgnoredMethods: ['context', 'describe', 'shared_examples_for']
 
 Layout/LineLength:
   Max: 120
