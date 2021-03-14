@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.experianaperture.io/address/search/v1
+    body:
+      encoding: UTF-8
+      string: '{"country_iso":"GBR","components":{"unspecified":["WC1B 3DG"]},"location":null,"dataset":null}'
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Auth-Token:
+      - "<AUTH_TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Date:
+      - Wed, 03 Mar 2021 15:57:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cdn:
+      - Imperva
+      Access-Control-Allow-Headers:
+      - Accept,Content-Type,Auth-Token,Origin,X-Requested-With,output,match-rule,pretty-output,country,linkage-rule,Add-Metadata,Reference-Id,Timeout-Seconds,Layout,Add-Components
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 5-36216526-36216531 NNYN CT(23 21 0) RT(1614787079528 42) q(0 0 1 -1) r(2
+        2) U6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":{"more_results_available":false,"confidence":"Verified match","suggestions":[{"global_address_key":"e0ab158102b8c051528094b27c055998d40322cb304c64b0706132cb87b5055fbfab9bf15aadff86","text":"British
+        Museum, Great Russell Street, London, WC1B 3DG","matched":[[46,54]],"format":"https://api.experianaperture.io/address/format/v1/e0ab158102b8c051528094b27c055998d40322cb304c64b0706132cb87b5055fbfab9bf15aadff86"}]}}'
+  recorded_at: Wed, 03 Mar 2021 15:57:59 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.experianaperture.io/address/format/v1/aWQ9TWFpbCBCb3hlcyBFdGMsIDkxIFdlc3Rlcm4gUm9hZCwgQnJpZ2h0b24sIEJOMSAyTlcsIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9MDIxODU2MzN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCRlZDU3MzM3MS04NWY5LTQyYzctYmQ5ZC0zZjY2Mjc2OWI0MmQkJCQ
+    body:
+      encoding: UTF-8
+      string: 'null'
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Auth-Token:
+      - "<AUTH_TOKEN>"
+      Content-Type:
+      - application/json
+      Add-Metadata:
+      - 'true'
+      Add-Components:
+      - 'true'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      X-Azure-Ref:
+      - 05nRLYAAAAACsaAJRMhphQpeFa4lR/dz7TE9OMjFFREdFMDIyMgBmNWFhODFkYi1iYjdjLTQ0MjItOGY4MS0xY2NhYWVjNmZhMDE=
+      Date:
+      - Fri, 12 Mar 2021 14:04:21 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cdn:
+      - Imperva
+      Access-Control-Allow-Headers:
+      - Accept,Content-Type,Auth-Token,Origin,X-Requested-With,output,match-rule,pretty-output,country,linkage-rule,Add-Metadata,Reference-Id,Timeout-Seconds,Layout,Add-Components
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 14-51207179-51207185 NNYN CT(4 15 0) RT(1615557861616 15) q(0 0 0 -1) r(1
+        1)
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":{"global_address_key":"aWQ9TWFpbCBCb3hlcyBFdGMsIDkxIFdlc3Rlcm4gUm9hZCwgQnJpZ2h0b24sIEJOMSAyTlcsIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9MDIxODU2MzN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCRlZDU3MzM3MS04NWY5LTQyYzctYmQ5ZC0zZjY2Mjc2OWI0MmQkJCQ","confidence":"Verified
+        match","address":{"address_line_1":"Mail Boxes Etc","address_line_2":"91 Western
+        Road","address_line_3":"","locality":"BRIGHTON","region":"","postal_code":"BN1
+        2NW","country":"UNITED KINGDOM"},"components":{"language":"en-GB","country_name":"United
+        Kingdom","country_iso_3":"GBR","postal_code":{"full_name":"BN1 2NW","primary":"BN1
+        2NW"},"building":{"building_number":"91"},"organization":{"company_name":"Mail
+        Boxes Etc"},"street":{"full_name":"Western Road","name":"Western","type":"Road"},"locality":{"town":{"name":"Brighton"}}}},"metadata":{"address_info":{"identifier":{"udprn":"02185633"}}}}'
+  recorded_at: Fri, 12 Mar 2021 14:04:22 GMT
+recorded_with: VCR 6.0.0

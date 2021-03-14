@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.experianaperture.io/address/search/v1
+    body:
+      encoding: UTF-8
+      string: '{"country_iso":"GBR","components":{"unspecified":["WC1B 3DG"]},"location":null,"dataset":null}'
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Auth-Token:
+      - invalid-api-token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Date:
+      - Fri, 12 Mar 2021 13:51:34 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cdn:
+      - Imperva
+      Access-Control-Allow-Headers:
+      - Accept,Content-Type,Auth-Token,Origin,X-Requested-With,output,match-rule,pretty-output,country,linkage-rule,Add-Metadata,Reference-Id,Timeout-Seconds,Layout,Add-Components
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 11-33619975-33619984 NNYN CT(2 13 0) RT(1615557094498 18) q(0 0 0 0) r(0 0)
+        U6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"Type":"Address Search Exception","Title":"Authentication
+        has been denied for this request.","Detail":"Authentication has been denied
+        for this request.","Instance":"Experian.Capture.AddressApi.Service"}}'
+  recorded_at: Fri, 12 Mar 2021 13:51:34 GMT
+recorded_with: VCR 6.0.0

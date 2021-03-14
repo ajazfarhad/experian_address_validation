@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.experianaperture.io/address/search/v1
+    body:
+      encoding: UTF-8
+      string: '{"country_iso":"GBR","components":{"unspecified":["BN1 2NW"]},"location":null,"dataset":null}'
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Auth-Token:
+      - "<AUTH_TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Date:
+      - Fri, 12 Mar 2021 13:54:37 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cdn:
+      - Imperva
+      Access-Control-Allow-Headers:
+      - Accept,Content-Type,Auth-Token,Origin,X-Requested-With,output,match-rule,pretty-output,country,linkage-rule,Add-Metadata,Reference-Id,Timeout-Seconds,Layout,Add-Components
+      Transfer-Encoding:
+      - chunked
+      X-Iinfo:
+      - 9-27099471-27099472 NNYN CT(4 10 0) RT(1615557277445 14) q(0 0 0 -1) r(2 2)
+        U6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":{"more_results_available":true,"confidence":"Multiple matches","suggestions":[{"global_address_key":"aWQ9TWFpbCBCb3hlcyBFdGMsIDkxIFdlc3Rlcm4gUm9hZCwgQnJpZ2h0b24sIEJOMSAyTlcsIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9MDIxODU2MzN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCRlZDU3MzM3MS04NWY5LTQyYzctYmQ5ZC0zZjY2Mjc2OWI0MmQkJCQ","text":"Mail
+        Boxes Etc, 91 Western Road, Brighton, BN1 2NW","matched":[[43,50]],"format":"https://api.experianaperture.io/address/format/v1/aWQ9TWFpbCBCb3hlcyBFdGMsIDkxIFdlc3Rlcm4gUm9hZCwgQnJpZ2h0b24sIEJOMSAyTlcsIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9MDIxODU2MzN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCRlZDU3MzM3MS04NWY5LTQyYzctYmQ5ZC0zZjY2Mjc2OWI0MmQkJCR-UUw9N35nZW89RmFsc2U"},{"global_address_key":"aWQ9TWFpbCBCb3hlcyBFdGMsIERlcHQuIDIyOCwgOTEgV2VzdGVybiBSb2FkLCBCcmlnaHRvbiwgQk4xIDJOVywgVW5pdGVkIEtpbmdkb21-YWx0X2tleT0wMjE4NTYzM35kYXRhc2V0PUdCUl9QQUZ-Zm9ybWF0X2tleT1HQlIkJDYxNjFkNjA2LWY2NDEtNDU3ZC1hOTUwLWZjMzFiOTllNTAzYiQkJA","text":"Mail
+        Boxes Etc, Dept. 228, 91 Western Road, Brighton, BN1 2NW","matched":[[54,61]],"format":"https://api.experianaperture.io/address/format/v1/aWQ9TWFpbCBCb3hlcyBFdGMsIERlcHQuIDIyOCwgOTEgV2VzdGVybiBSb2FkLCBCcmlnaHRvbiwgQk4xIDJOVywgVW5pdGVkIEtpbmdkb21-YWx0X2tleT0wMjE4NTYzM35kYXRhc2V0PUdCUl9QQUZ-Zm9ybWF0X2tleT1HQlIkJDYxNjFkNjA2LWY2NDEtNDU3ZC1hOTUwLWZjMzFiOTllNTAzYiQkJH5RTD03fmdlbz1GYWxzZQ"},{"global_address_key":"aWQ9TWFpbCBCb3hlcyBFdGMsIERlcGFydG1lbnQgMjI4LCA5MSBXZXN0ZXJuIFJvYWQsIEJyaWdodG9uLCBCTjEgMk5XLCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTAyMTg1NjMzfmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiQkYWYyMGVmYTctNzBmZC00OTIxLThiYjktZDE0NzE3YjhlNGQ1JCQk","text":"Mail
+        Boxes Etc, Department 228, 91 Western Road, Brighton, BN1 2NW","matched":[[59,66]],"format":"https://api.experianaperture.io/address/format/v1/aWQ9TWFpbCBCb3hlcyBFdGMsIERlcGFydG1lbnQgMjI4LCA5MSBXZXN0ZXJuIFJvYWQsIEJyaWdodG9uLCBCTjEgMk5XLCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTAyMTg1NjMzfmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiQkYWYyMGVmYTctNzBmZC00OTIxLThiYjktZDE0NzE3YjhlNGQ1JCQkflFMPTd-Z2VvPUZhbHNl"},{"global_address_key":"aWQ9TWFpbCBCb3hlcyBFdGMsIFVuaXQgMjE0LCA5MSBXZXN0ZXJuIFJvYWQsIEJyaWdodG9uLCBCTjEgMk5XLCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTAyMTg1NjMzfmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiQkMjAyZTJkMDAtMDBlZC00ZWQ4LTkzY2MtMTIxNDc2ZTZmYzkxJCQk","text":"Mail
+        Boxes Etc, Unit 214, 91 Western Road, Brighton, BN1 2NW","matched":[[53,60]],"format":"https://api.experianaperture.io/address/format/v1/aWQ9TWFpbCBCb3hlcyBFdGMsIFVuaXQgMjE0LCA5MSBXZXN0ZXJuIFJvYWQsIEJyaWdodG9uLCBCTjEgMk5XLCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTAyMTg1NjMzfmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiQkMjAyZTJkMDAtMDBlZC00ZWQ4LTkzY2MtMTIxNDc2ZTZmYzkxJCQkflFMPTd-Z2VvPUZhbHNl"}]}}'
+  recorded_at: Fri, 12 Mar 2021 13:54:37 GMT
+recorded_with: VCR 6.0.0
