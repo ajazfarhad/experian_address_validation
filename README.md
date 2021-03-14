@@ -1,43 +1,147 @@
-# ExperianAddressValidation
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/experian_address_validation`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# Experian Address Validation
+Ruby wrapper for Experian Address Validation REST API
 
 ## Installation
-
 Add this line to your application's Gemfile:
 
 ```ruby
 gem 'experian_address_validation'
 ```
-
 And then execute:
 
-    $ bundle install
+    $ bundle
 
 Or install it yourself as:
-
-    $ gem install experian_address_validation
+```ruby
+$ gem install experian_address_validation
+```
 
 ## Usage
+------
+## Configure client
+**For using this Gem in a Rails app. Add the following code as an initializer**
 
-TODO: Write usage instructions here
+``` ruby
+  ExperianAddressValidation::Client do |config|
+    config.auth_token = ENV["AUTH_TOKEN"]
+    config.base_url = ENV["BASE_URL"]
+    config.iso_code = ENV["ISO_CODE"]
+  end
+```
+**You can provide default ``iso_code`` through a config variable or you can send as a payload option to search endpoint.**
 
-## Development
+## Experian Address Validation API Reference
+https://www.edq.com/documentation/apis-r/address-validate/experian-address-validation/#/AddressFormat/Get
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Search Address
+------
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+``` ruby
+ExperianAddressValidation::Operations::Search.new(payload: {
+  query: 'GU1 3DG', country_iso: 'GBR'}
+}).execute
+```
+The call to above operation will return response in the following structure.
 
-## Contributing
+``body`` - containing hash with the following data
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/experian_address_validation. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/experian_address_validation/blob/master/CODE_OF_CONDUCT.md).
+``` ruby
+{
+  result: {
+    more_results_available: true,
+    confidence: "Verified match",
+    suggestions: [
+      {
+        global_address_key: "aWQ9ZWUwMzhjYzAtY2IxZi00MDRiLTTlfVTQwXzI0XzBfMF8wPTV-fn4",
+        text: "125 Summer St, Guildford",
+        format: "https://localhost/capture/address/v3/format/lkjslgaldkgalfdgobihflg9703502462lkg"
+      }
+    ]
+  }
+}
+```
+``code`` - Status code e.g ``200``
 
-## License
+Address Search endpoint:
+https://api.experianaperture.io/address/search/v1
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+## Format Address
+------
 
-## Code of Conduct
+``` ruby
+ExperianAddressValidation::Operations::Format.new({
+  global_address_key: 'aWQ9ZWUwMzhjYzAtY2IxZi00MDRiL...'
+}).execute
+```
+``Add-Metadata`` and ``Add-Components`` headers are default set to ``true`` in ``Format`` call.
+However you can override them by passing ``headers`` hash as an option to the ``Format`` endpoint.
 
-Everyone interacting in the ExperianAddressValidation project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/experian_address_validation/blob/master/CODE_OF_CONDUCT.md).
+``` ruby
+headers:  { Add-Metadata: false, Add-Components: false }
+```
+
+``code`` - Status code e.g ``200``
+
+The call to above operation will return response in the following structure.
+
+``` ruby
+{
+    result: {
+        global_address_key: "aWQ9ZWUwMzhjYzAtY2IxZi00MDRiL...",
+        confidence: "Verified match",
+        address: {
+            address_line_1: "Mail Boxes Etc",
+            address_line_2: "91 Western Road",
+            address_line_3: "",
+            locality: "BRIGHTON",
+            region: "",
+            postal_code: "BN1 2NW",
+            country: "UNITED KINGDOM"
+        },
+        components: {
+            language: "en-GB",
+            country_name: "United Kingdom",
+            country_iso_3: "GBR",
+            postal_code: {
+                full_name: "BN1 2NW",
+                primary: "BN1 2NW"
+            },
+            building: {
+                building_number: "91"
+            },
+            organization: {
+                company_name: "Mail Boxes Etc"
+            },
+            street: {
+                full_name: "Western Road",
+                name: "Western",
+                type: "Road"
+            },
+            locality: {
+                town: {
+                    name: "Brighton"
+                }
+            }
+        }
+    },
+    "metadata": {
+        "address_info": {
+            "identifier": {
+                "udprn": "123123"
+            }
+        }
+    }
+}
+```
+
+Address Format endpoint:
+https://api.experianaperture.io/address/format/v1/#{global_address_key}
+
+## Running specs
+
+To run the specs, add your development credentials to your dev env.test file:
+```
+BASE_URL=https://api.experianaperture.io
+AUTH_TOKEN=<api_token>
+ISO_CODE=GBR
+```
