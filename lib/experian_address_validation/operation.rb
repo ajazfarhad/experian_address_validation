@@ -68,4 +68,3 @@ module ExperianAddressValidation
     def endpoint; end
   end
 end
-
