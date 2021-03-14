@@ -1,6 +1,25 @@
 # frozen_string_literal: true
 
 require "experian_address_validation"
+require "dotenv"
+require "vcr"
+require "bundler/setup"
+
+require_relative "support/helpers/client_helper"
+
+Dotenv.load("env.test", "env.example")
+
+VCR.configure do |c|
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.ignore_localhost = true
+  c.cassette_library_dir = "spec/support/fixtures/vcr_cassettes"
+  c.allow_http_connections_when_no_cassette = true
+  c.default_cassette_options = { match_requests_on: [:uri] }
+
+  # Filter senstive test credentials from VCR interaction.
+  c.filter_sensitive_data("<AUTH_TOKEN>") { ENV["AUTH_TOKEN"] }
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
