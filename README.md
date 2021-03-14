@@ -41,7 +41,7 @@ https://www.edq.com/documentation/apis-r/address-validate/experian-address-valid
 
 ``` ruby
 ExperianAddressValidation::Operations::Search.new(payload: {
-  query: 'GU1 3DG', country_iso: 'GBR'}
+  query: 'BN1 2NW', country_iso: 'GBR'}
 }).execute
 ```
 The call to above operation will return response in the following structure.
@@ -55,9 +55,9 @@ The call to above operation will return response in the following structure.
     confidence: "Verified match",
     suggestions: [
       {
-        global_address_key: "aWQ9ZWUwMzhjYzAtY2IxZi00MDRiLTTlfVTQwXzI0XzBfMF8wPTV-fn4",
-        text: "125 Summer St, Guildford",
-        format: "https://localhost/capture/address/v3/format/lkjslgaldkgalfdgobihflg9703502462lkg"
+        global_address_key: "aWQ9ZWUwMzhjYzAtY2IxZi00MDRiLTTlfVTQwXzI0XzBfMF8",
+        text: "Mail Boxes Etc, 91 Western Road, Brighton, BN1 2NW",
+        format: "https://localhost/capture/address/v3/format/aWQ9ZWUwMzhjYzAtY2IxZi00MDRiLTTlfVTQwXzI0XzBfMF8"
       }
     ]
   }
